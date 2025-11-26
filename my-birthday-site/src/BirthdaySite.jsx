@@ -6,6 +6,8 @@ import confetti from "canvas-confetti";
 export default function BirthdaySite() {
   const target = new Date("2025-11-28T00:00:00");
 
+  const [musicAllowed, setMusicAllowed] = useState(false);
+
   const [now, setNow] = useState(new Date());
   const [stage, setStage] = useState("countdown");
   const [candlesOut, setCandlesOut] = useState(false);
@@ -38,6 +40,7 @@ export default function BirthdaySite() {
   const [selectedGift, setSelectedGift] = useState("");
   const [scratchCompleted, setScratchCompleted] = useState(false);
 
+  <button onClick={() => setMusicAllowed(true)}>Enter</button>
 
   // Time updater
   useEffect(() => {
