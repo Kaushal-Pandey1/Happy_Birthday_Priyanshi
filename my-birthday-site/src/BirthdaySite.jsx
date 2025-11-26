@@ -415,7 +415,7 @@ useEffect(() => {
 
             <p className="text-lg">Counting down to</p>
             <p className="text-2xl font-semibold mt-1">28 November 2025</p>
-
+            <audio src="/birthday.mp3" autoPlay loop />
             <div className="flex justify-center gap-4 mt-5">
               <TimeBox label="Days" value={days} />
               <TimeBox label="Hours" value={hours} />
@@ -452,7 +452,7 @@ useEffect(() => {
         {/* ---------------- CELEBRATE (CAKE) ---------------- */}
         {stage === "celebrate" && (
   <div className="text-center py-10 flex flex-col items-center gap-5px">
-
+<audio src="/birthday.mp3" autoPlay loop />
 <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink-400 to-red-400 
             flex items-center justify-center text-white text-4xl font-bold 
             shadow-[0_0_20px_6px_rgba(255,100,150,0.6)] mb-4">
