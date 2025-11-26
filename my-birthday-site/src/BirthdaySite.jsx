@@ -673,25 +673,27 @@ Wishing you a very Happy Birthday, and more importantly, blessings from my side 
       </p>
 
       {/* SCRATCH CARD */}
-      <div className="w-full flex items-center justify-center mt-6">
+      <div className="w-full flex justify-center">
   <SmoothScratchCard
-    width={320}
-    height={200}
-    className="rounded-xl shadow-xl"
+    width={Math.min(window.innerWidth * 0.85, 350)}
+    height={Math.min(window.innerHeight * 0.28, 240)}
+    className="rounded-xl overflow-hidden shadow-xl"
   >
-    <div className="w-full h-full bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-xl flex flex-col items-center justify-center px-4">
-      <h2 className="text-xl font-bold text-pink-700">🎉 Surprise! 🎉</h2>
+    <div className="w-full h-full bg-gradient-to-br from-pink-200 to-white 
+         rounded-xl flex flex-col items-center justify-center p-4">
+      <h2 className="text-lg font-bold text-pink-700">🎉 Surprise! 🎉</h2>
       <p className="text-gray-700 mt-2">Here is your special gift:</p>
 
       <a
         href="/gift.pdf"
-        className="mt-3 px-5 py-2 bg-pink-600 text-white rounded-full shadow hover:scale-105 transition"
+        className="mt-3 px-4 py-2 bg-pink-600 text-white rounded-full shadow hover:scale-105 transition"
       >
         Download Gift
       </a>
     </div>
   </SmoothScratchCard>
 </div>
+
 
       {/* Final Message */}
       <h4 className="mt-8 text-xl font-semibold">A Final Note 💗</h4>
