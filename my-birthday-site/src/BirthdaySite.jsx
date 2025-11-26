@@ -249,7 +249,7 @@ useEffect(() => {
   return (
 
      <div className="w-screen h-screen flex items-center justify-center bg-gradient-to-br from-rose-200 via-pink-100 to-amber-100 relative">
-         <audio ref={bgMusicRef} src="/birthday.mp3" autoPlay loop />
+        
 <div className="absolute inset-0 overflow-hidden pointer-events-none">
     {Array.from({ length: 60 }).map((_, i) => (
       <div
@@ -445,7 +445,11 @@ useEffect(() => {
             <p className="text-gray-600 mt-2">Tap to celebrate!</p>
 
             <button
-              onClick={handleCelebrateClick}
+              onClick={()=>{
+                {audioAllowed && (
+  <audio ref={bgMusicRef} src="/music.mp3" autoPlay loop />
+)}
+                handleCelebrateClick();}}
               className="mt-6 px-6 py-2 bg-pink-600 text-white rounded-full shadow-lg hover:scale-105 transition"
             >
               Tap to Celebrate!
