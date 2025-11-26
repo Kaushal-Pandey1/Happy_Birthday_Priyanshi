@@ -447,7 +447,7 @@ useEffect(() => {
             <button
               onClick={()=>{
                 {audioAllowed && (
-  <audio ref={bgMusicRef} src="/music.mp3" autoPlay loop />
+  <audio ref={bgMusicRef} src="/birthday.mp3" autoPlay loop />
 )}
                 handleCelebrateClick();}}
               className="mt-6 px-6 py-2 bg-pink-600 text-white rounded-full shadow-lg hover:scale-105 transition"
