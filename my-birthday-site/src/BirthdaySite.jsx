@@ -73,6 +73,7 @@ useEffect(() => {
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
     return { days, hours, minutes, seconds };
+    
   }
 
   const { days, hours, minutes, seconds } = timeLeft();
@@ -246,7 +247,7 @@ useEffect(() => {
   }
 
   return (
-
+  <audio ref={bgMusicRef} src="/birthday.mp3" autoPlay loop />
      <div className="w-screen h-screen flex items-center justify-center bg-gradient-to-br from-rose-200 via-pink-100 to-amber-100 relative">
 <div className="absolute inset-0 overflow-hidden pointer-events-none">
     {Array.from({ length: 60 }).map((_, i) => (
@@ -269,7 +270,7 @@ useEffect(() => {
 
     {/* MAIN CARD */}
     <div className="relative h-full w-full bg-white/60 backdrop-blur-2xl shadow-2xl rounded-3xl p-10 border border-pink-300">
-     <audio ref={bgMusicRef} src="/birthday.mp3" autoPlay loop />
+     
 
       {/* Floating Hearts Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
