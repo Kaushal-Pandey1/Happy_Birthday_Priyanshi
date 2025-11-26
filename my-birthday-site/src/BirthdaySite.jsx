@@ -445,9 +445,7 @@ useEffect(() => {
             <p className="text-gray-600 mt-2">Tap to celebrate!</p>
 
             <button
-              onClick={()=>{
-              handleCelebrateClick();
-              }}
+              onClick={handleCelebrateClick}
               className="mt-6 px-6 py-2 bg-pink-600 text-white rounded-full shadow-lg hover:scale-105 transition"
             >
               Tap to Celebrate!
