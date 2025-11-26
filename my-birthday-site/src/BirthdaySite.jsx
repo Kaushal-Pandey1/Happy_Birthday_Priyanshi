@@ -7,7 +7,7 @@ export default function BirthdaySite() {
   const target = new Date("2025-11-28T00:00:00");
 
   const [musicAllowed, setMusicAllowed] = useState(false);
-
+  const bgMusicRef = useRef(null);
   const [now, setNow] = useState(new Date());
   const [stage, setStage] = useState("countdown");
   const [candlesOut, setCandlesOut] = useState(false);
@@ -269,6 +269,7 @@ useEffect(() => {
 
     {/* MAIN CARD */}
     <div className="relative h-full w-full bg-white/60 backdrop-blur-2xl shadow-2xl rounded-3xl p-10 border border-pink-300">
+     <audio ref={bgMusicRef} src="/birthday.mp3" autoPlay loop />
 
       {/* Floating Hearts Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -455,7 +456,7 @@ useEffect(() => {
         {/* ---------------- CELEBRATE (CAKE) ---------------- */}
         {stage === "celebrate" && (
   <div className="text-center py-10 flex flex-col items-center gap-5px">
-<audio src="/birthday.mp3" autoPlay loop />
+
 <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink-400 to-red-400 
             flex items-center justify-center text-white text-4xl font-bold 
             shadow-[0_0_20px_6px_rgba(255,100,150,0.6)] mb-4">
@@ -591,8 +592,10 @@ Wishing you a very Happy Birthday, and more importantly, blessings from my side 
 
         <button
           onClick={() => {
-            burst();
-            setStage("fullslideshow");
+            bgMusicRef.current?.pause();
+    bgMusicRef.current.currentTime = 0; // optional: reset song
+    burst();
+    setStage("fullslideshow");
           }}
           className="mt-6 px-6 py-3 bg-pink-500 text-white rounded-full shadow-lg hover:scale-105 transition"
         >
