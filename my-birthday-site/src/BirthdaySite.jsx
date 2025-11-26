@@ -247,8 +247,9 @@ useEffect(() => {
   }
 
   return (
-  <audio ref={bgMusicRef} src="/birthday.mp3" autoPlay loop />
+
      <div className="w-screen h-screen flex items-center justify-center bg-gradient-to-br from-rose-200 via-pink-100 to-amber-100 relative">
+         <audio ref={bgMusicRef} src="/birthday.mp3" autoPlay loop />
 <div className="absolute inset-0 overflow-hidden pointer-events-none">
     {Array.from({ length: 60 }).map((_, i) => (
       <div
