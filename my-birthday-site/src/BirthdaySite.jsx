@@ -4,7 +4,7 @@ import confetti from "canvas-confetti";
 
 
 export default function BirthdaySite() {
-  const target = new Date("2025-11-27T16:37:33");
+  const target = new Date("2025-11-27T16:47:33");
 
   const [musicAllowed, setMusicAllowed] = useState(false);
   
@@ -48,21 +48,30 @@ export default function BirthdaySite() {
     return () => clearInterval(t);
   }, []);
 
-  useEffect(() => {
+ // Auto-trigger when countdown ends (runs only once)
+useEffect(() => {
   const diff = target - now;
 
-  if (diff <= 0) {
-    // Stop the countdown timer completely
-   
+  // Only trigger if time is finished AND user is still on countdown page
+  if (diff <= 0 && stage === "countdown") {
 
-    // Burst confetti
-    burst();
-   
+    // Stop updating timer
+    setNow(target);
 
-    // Move automatically to "arrived" page
+    // Confetti burst ONCE
+    confetti({
+      particleCount: 150,
+      spread: 80,
+      origin: { y: 0.5 },
+    });
+
+    // Move to Arrived page
     setStage("arrived");
   }
-}, [now]);
+}, [now, stage]);
+
+
+  
   // Slideshow auto-rotate
  useEffect(() => {
   if (stage === "fullslideshow") {
@@ -432,8 +441,9 @@ useEffect(() => {
 
         {/* ---------------- COUNTDOWN ---------------- */}
         {stage === "countdown" && (
-          <div className="text-center">
-          <audio src="/birthday.mp3" autoPlay loop />
+<audio src="/birthday.mp3" autoPlay loop />        
+  <div className="text-center">
+          
             <p className="text-lg">Counting down to</p>
             <p className="text-2xl font-semibold mt-1">28 November 2025</p>
            
