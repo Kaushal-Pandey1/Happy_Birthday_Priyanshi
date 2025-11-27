@@ -50,10 +50,10 @@ export default function BirthdaySite() {
 
   useEffect(() => {
   const diff = target - now;
-
+  if(diff>0){<audio src="/birthday.mp3" autoPlay loop />}
   if (diff <= 0) {
     // Stop the countdown timer completely
-    setNow(target);
+   
 
     // Burst confetti
     burst();
@@ -443,7 +443,7 @@ useEffect(() => {
               <TimeBox label="Minutes" value={minutes} />
               <TimeBox label="Seconds" value={seconds} />
             </div>
- <audio src="/birthday.mp3" autoPlay loop />
+ 
             {/* <button
               className="mt-8 px-6 py-2 bg-pink-500 text-white rounded-full shadow-lg hover:scale-105 transition"
               onClick={() => setStage("arrived")}
