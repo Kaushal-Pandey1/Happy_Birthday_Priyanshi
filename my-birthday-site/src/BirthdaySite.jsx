@@ -4,7 +4,7 @@ import confetti from "canvas-confetti";
 
 
 export default function BirthdaySite() {
-  const target = new Date("2025-11-27T16:35:33");
+  const target = new Date("2025-11-27T16:37:33");
 
   const [musicAllowed, setMusicAllowed] = useState(false);
   
@@ -50,7 +50,7 @@ export default function BirthdaySite() {
 
   useEffect(() => {
   const diff = target - now;
-  if(diff>0){<audio src="/birthday.mp3" autoPlay loop />}
+
   if (diff <= 0) {
     // Stop the countdown timer completely
    
@@ -433,7 +433,7 @@ useEffect(() => {
         {/* ---------------- COUNTDOWN ---------------- */}
         {stage === "countdown" && (
           <div className="text-center">
-       
+          <audio src="/birthday.mp3" autoPlay loop />
             <p className="text-lg">Counting down to</p>
             <p className="text-2xl font-semibold mt-1">28 November 2025</p>
            
