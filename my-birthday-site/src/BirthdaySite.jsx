@@ -4,7 +4,7 @@ import confetti from "canvas-confetti";
 
 
 export default function BirthdaySite() {
-  const target = new Date("2025-11-27T17:06:33");
+  const target = new Date("2025-11-27T17:09:33");
 
   const [audioLocked, setAudioLocked] = useState(true);
 const countdownAudioRef = useRef(null);
@@ -474,19 +474,8 @@ useEffect(() => {
               <TimeBox label="Seconds" value={seconds} />
             </div>
  
-            {/* <button
-              className="mt-8 px-6 py-2 bg-pink-500 text-white rounded-full shadow-lg hover:scale-105 transition"
-              onClick={() => setStage("arrived")}
-            >
-              Jump to Date
-            </button> */}'
-                <audio ref={countdownAudioRef} src="/birthday.mp3" muted autoPlay loop />
-
-   
-
-
-          </div>
-  {audioLocked && (
+           <audio ref={countdownAudioRef} src="/birthday.mp3" muted autoPlay loop />
+ {audioLocked && (
   <button 
     className="mt-6 px-4 py-2 bg-pink-500 text-white rounded-full shadow 
                text-sm animate-pulse"
@@ -494,6 +483,12 @@ useEffect(() => {
     Tap to enable music 🎵
   </button>
 )}
+              
+   
+
+
+          </div>
+ 
         )}
 
         {/* ---------------- ARRIVED ---------------- */}
