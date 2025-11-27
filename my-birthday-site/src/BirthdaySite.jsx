@@ -625,7 +625,7 @@ Wishing you a very Happy Birthday, and more importantly, blessings from my side 
 )}
 
    {stage === "fullslideshow" && (
-  <div className="fixed inset-0 z-40 flex flex-col items-center justify-center p-50">
+  <div className="fixed inset-0 z-40 flex flex-col items-center justify-center p-32">
 
     
     {/* <div className="absolute inset-0 bg-gradient-to-br from-rose-200 via-pink-100 to-amber-100 opacity-90 pointer-events-none"></div> */}
@@ -676,26 +676,39 @@ Wishing you a very Happy Birthday, and more importantly, blessings from my side 
       </p>
 
       {/* SCRATCH CARD */}
-      <div className="w-full flex justify-center">
+     <div className="w-full flex justify-center mt-6">
   <SmoothScratchCard
-    width={Math.min(window.innerWidth * 0.85, 350)}
-    height={Math.min(window.innerHeight * 0.28, 240)}
-    className="rounded-xl overflow-hidden shadow-xl"
+    width={Math.min(window.innerWidth * 0.85, 350)}   // responsive width
+    height={Math.min(window.innerHeight * 0.30, 240)} // responsive height
+    brushSize={30}
+    className="rounded-xl overflow-hidden shadow-xl bg-[#d4af37]"
+    style={{
+      borderRadius: "20px",
+      maxWidth: "350px",   // max limit to prevent huge size
+      maxHeight: "260px",
+    }}
   >
-    <div className="w-full h-full bg-gradient-to-br from-pink-200 to-white 
-         rounded-xl flex flex-col items-center justify-center p-4">
-      <h2 className="text-lg font-bold text-pink-700">🎉 Surprise! 🎉</h2>
-      <p className="text-gray-700 mt-2">Here is your special gift:</p>
+    <div className="w-full h-full bg-gradient-to-br from-pink-200 to-white rounded-xl 
+        flex flex-col items-center justify-center p-4">
+
+      <h2 className="text-xl font-bold text-pink-700 text-center">🎉 Surprise! 🎉</h2>
+
+      <p className="text-gray-700 text-center mt-2">
+        Here is your special gift:
+      </p>
 
       <a
         href="/gift.pdf"
-        className="mt-3 px-4 py-2 bg-pink-600 text-white rounded-full shadow hover:scale-105 transition"
+        className="mt-3 px-5 py-2 bg-pink-600 text-white rounded-full shadow 
+                  hover:scale-105 transition text-sm"
       >
         Download Gift
       </a>
+
     </div>
   </SmoothScratchCard>
 </div>
+
 
 
       {/* Final Message */}
