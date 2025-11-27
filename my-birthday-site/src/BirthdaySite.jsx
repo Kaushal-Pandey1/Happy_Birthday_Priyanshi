@@ -441,8 +441,8 @@ useEffect(() => {
 
         {/* ---------------- COUNTDOWN ---------------- */}
         {stage === "countdown" && (
-<audio src="/birthday.mp3" autoPlay loop />        
-  <div className="text-center">
+
+              <div className="text-center">
           
             <p className="text-lg">Counting down to</p>
             <p className="text-2xl font-semibold mt-1">28 November 2025</p>
@@ -459,7 +459,8 @@ useEffect(() => {
               onClick={() => setStage("arrived")}
             >
               Jump to Date
-            </button> */}
+            </button> */}'
+                <audio src="/birthday.mp3" autoPlay loop />        
           </div>
         )}
 
