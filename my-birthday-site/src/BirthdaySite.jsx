@@ -48,6 +48,24 @@ export default function BirthdaySite() {
     return () => clearInterval(t);
   }, []);
 
+  useEffect(() => {
+  const diff = target - now;
+
+  if (diff <= 0) {
+    // Stop the countdown timer completely
+    setNow(target);
+
+    // Burst confetti
+    confetti({
+      particleCount: 150,
+      spread: 80,
+      origin: { y: 0.5 }
+    });
+
+    // Move automatically to "arrived" page
+    setStage("arrived");
+  }
+}, [now]);
   // Slideshow auto-rotate
  useEffect(() => {
   if (stage === "fullslideshow") {
