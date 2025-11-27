@@ -4,7 +4,7 @@ import confetti from "canvas-confetti";
 
 
 export default function BirthdaySite() {
-  const target = new Date("2025-11-27T17:15:33");
+  const target = new Date("2025-11-28T00:00:00");
 
   const [audioLocked, setAudioLocked] = useState(true);
 const countdownAudioRef = useRef(null);
