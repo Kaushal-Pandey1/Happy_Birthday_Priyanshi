@@ -7,7 +7,7 @@ export default function BirthdaySite() {
   const target = new Date("2025-11-28T00:00:00");
 
   const [musicAllowed, setMusicAllowed] = useState(false);
-  const bgMusicRef = useRef(null);
+  
   const [now, setNow] = useState(new Date());
   const [stage, setStage] = useState("countdown");
   const [candlesOut, setCandlesOut] = useState(false);
@@ -465,7 +465,7 @@ useEffect(() => {
   20
 </div>
 
-
+ <audio src="/birthday.mp3" autoPlay loop />
 
 {/* Candles BELOW the cake */}
     <div className="mt-4 flex justify-center gap-3">
@@ -594,8 +594,6 @@ Wishing you a very Happy Birthday, and more importantly, blessings from my side 
 
         <button
           onClick={() => {
-            bgMusicRef.current?.pause();
-    bgMusicRef.current.currentTime = 0; // optional: reset song
     burst();
     setStage("fullslideshow");
           }}
