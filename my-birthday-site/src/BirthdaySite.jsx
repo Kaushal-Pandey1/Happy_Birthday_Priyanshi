@@ -4,7 +4,7 @@ import confetti from "canvas-confetti";
 
 
 export default function BirthdaySite() {
-  const target = new Date("2025-11-27T16:28:33");
+  const target = new Date("2025-11-27T16:33:33");
 
   const [musicAllowed, setMusicAllowed] = useState(false);
   
@@ -56,11 +56,8 @@ export default function BirthdaySite() {
     setNow(target);
 
     // Burst confetti
-    confetti({
-      particleCount: 150,
-      spread: 80,
-      origin: { y: 0.5 }
-    });
+    burst();
+   
 
     // Move automatically to "arrived" page
     setStage("arrived");
@@ -436,7 +433,7 @@ useEffect(() => {
         {/* ---------------- COUNTDOWN ---------------- */}
         {stage === "countdown" && (
           <div className="text-center">
-        <audio src="/birthday.mp3" autoPlay loop />
+       
             <p className="text-lg">Counting down to</p>
             <p className="text-2xl font-semibold mt-1">28 November 2025</p>
            
@@ -446,7 +443,7 @@ useEffect(() => {
               <TimeBox label="Minutes" value={minutes} />
               <TimeBox label="Seconds" value={seconds} />
             </div>
-
+ <audio src="/birthday.mp3" autoPlay loop />
             {/* <button
               className="mt-8 px-6 py-2 bg-pink-500 text-white rounded-full shadow-lg hover:scale-105 transition"
               onClick={() => setStage("arrived")}
