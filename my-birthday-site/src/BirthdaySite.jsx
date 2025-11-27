@@ -625,7 +625,7 @@ Wishing you a very Happy Birthday, and more importantly, blessings from my side 
 )}
 
    {stage === "fullslideshow" && (
-  <div className="fixed inset-0 z-40 flex flex-col items-center justify-center p-20">
+  <div className="fixed inset-0 z-40 flex flex-col items-center justify-center p-50">
 
     
     {/* <div className="absolute inset-0 bg-gradient-to-br from-rose-200 via-pink-100 to-amber-100 opacity-90 pointer-events-none"></div> */}
