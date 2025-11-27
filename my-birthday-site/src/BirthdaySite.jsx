@@ -4,7 +4,7 @@ import confetti from "canvas-confetti";
 
 
 export default function BirthdaySite() {
-  const target = new Date("2025-11-27T16:33:33");
+  const target = new Date("2025-11-27T16:35:33");
 
   const [musicAllowed, setMusicAllowed] = useState(false);
   
