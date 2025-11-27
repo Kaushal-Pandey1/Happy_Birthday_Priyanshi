@@ -4,10 +4,11 @@ import confetti from "canvas-confetti";
 
 
 export default function BirthdaySite() {
-  const target = new Date("2025-11-27T16:47:33");
+  const target = new Date("2025-11-27T16:59:33");
 
   const [musicAllowed, setMusicAllowed] = useState(false);
-  
+  const countdownAudioRef = useRef(null);
+
   const [now, setNow] = useState(new Date());
   const [stage, setStage] = useState("countdown");
   const [candlesOut, setCandlesOut] = useState(false);
@@ -48,6 +49,20 @@ export default function BirthdaySite() {
     return () => clearInterval(t);
   }, []);
 
+
+  useEffect(() => {
+  const enableAudio = () => {
+    if (countdownAudioRef.current) {
+      countdownAudioRef.current.muted = false;
+    }
+    window.removeEventListener("click", enableAudio);
+  };
+
+  window.addEventListener("click", enableAudio);
+
+  return () => window.removeEventListener("click", enableAudio);
+}, []);
+
  // Auto-trigger when countdown ends (runs only once)
 useEffect(() => {
   const diff = target - now;
@@ -60,8 +75,8 @@ useEffect(() => {
 
     // Confetti burst ONCE
     confetti({
-      particleCount: 150,
-      spread: 80,
+      particleCount: 300,
+      spread: 100,
       origin: { y: 0.5 },
     });
 
@@ -460,7 +475,8 @@ useEffect(() => {
             >
               Jump to Date
             </button> */}'
-                <audio src="/birthday.mp3" autoPlay loop />        
+                <audio ref={countdownAudioRef} src="/birthday.mp3" muted autoPlay loop />
+    
           </div>
         )}
 
