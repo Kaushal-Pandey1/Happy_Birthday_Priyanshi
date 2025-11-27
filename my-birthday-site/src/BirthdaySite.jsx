@@ -4,7 +4,7 @@ import confetti from "canvas-confetti";
 
 
 export default function BirthdaySite() {
-  const target = new Date("2025-11-28T00:00:00");
+  const target = new Date("2025-11-27T16:22:33");
 
   const [musicAllowed, setMusicAllowed] = useState(false);
   
@@ -429,12 +429,12 @@ useEffect(() => {
               <TimeBox label="Seconds" value={seconds} />
             </div>
 
-            <button
+            {/* <button
               className="mt-8 px-6 py-2 bg-pink-500 text-white rounded-full shadow-lg hover:scale-105 transition"
               onClick={() => setStage("arrived")}
             >
               Jump to Date
-            </button>
+            </button> */}
           </div>
         )}
 
