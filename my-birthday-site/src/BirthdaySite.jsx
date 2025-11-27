@@ -4,7 +4,7 @@ import confetti from "canvas-confetti";
 
 
 export default function BirthdaySite() {
-  const target = new Date("2025-11-27T16:22:33");
+  const target = new Date("2025-11-27T16:28:33");
 
   const [musicAllowed, setMusicAllowed] = useState(false);
   
@@ -436,7 +436,7 @@ useEffect(() => {
         {/* ---------------- COUNTDOWN ---------------- */}
         {stage === "countdown" && (
           <div className="text-center">
-           <audio src="/birthday.mp3" autoPlay loop />
+        <audio src="/birthday.mp3" autoPlay loop />
             <p className="text-lg">Counting down to</p>
             <p className="text-2xl font-semibold mt-1">28 November 2025</p>
            
