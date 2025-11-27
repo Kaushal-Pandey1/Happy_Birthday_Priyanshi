@@ -418,7 +418,7 @@ useEffect(() => {
         {/* ---------------- COUNTDOWN ---------------- */}
         {stage === "countdown" && (
           <div className="text-center">
-
+           <audio src="/birthday.mp3" autoPlay loop />
             <p className="text-lg">Counting down to</p>
             <p className="text-2xl font-semibold mt-1">28 November 2025</p>
            
