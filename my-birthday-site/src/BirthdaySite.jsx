@@ -4,7 +4,7 @@ import confetti from "canvas-confetti";
 
 
 export default function BirthdaySite() {
-  const target = new Date("2025-11-27T16:59:33");
+  const target = new Date("2025-11-27T17:02:33");
 
   const [musicAllowed, setMusicAllowed] = useState(false);
   const countdownAudioRef = useRef(null);
@@ -476,7 +476,15 @@ useEffect(() => {
               Jump to Date
             </button> */}'
                 <audio ref={countdownAudioRef} src="/birthday.mp3" muted autoPlay loop />
-    
+    {audioLocked && (
+  <button 
+    className="mt-6 px-4 py-2 bg-pink-500 text-white rounded-full shadow 
+               text-sm animate-pulse"
+  >
+    Tap to enable music 🎵
+  </button>
+)}
+
           </div>
         )}
 
